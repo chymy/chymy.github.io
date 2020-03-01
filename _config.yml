@@ -1,6 +1,6 @@
 # Site settings
 title: Chymy Blog
-SEOTitle: Chym的博客 | Chym Blog
+SEOTitle: 常民的博客 | Chymy Blog
 header-img: img/home-bg.jpg
 email: 928588056@qq.com
 description: ""
@@ -12,11 +12,11 @@ baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
 # SNS settings
 RSS: false
-weibo_username:     huxpro
-zhihu_username:     huxpro
-github_username:    huxpro
+weibo_username:     chymworld
+#zhihu_username:     
+github_username:    chymy
 #twitter_username:  huxpro
-facebook_username:  huxpro
+#facebook_username:  huxpro
 
 
 
