@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      GlusterFs和Heketi的安装部署以及在k8s中的使用
+title:      GlusterFs和Heketi的安装部署
 subtitle:   
 date:       2020-04-21
 author:     Chymy
