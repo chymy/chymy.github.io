@@ -379,20 +379,37 @@ Creating cluster ... ID: f7871c30c88b3a0d03a6b326c17fdabb
 
 ```
 
-如果出现如下错误：
-
-```shell
-Adding device /dev/sdb ... Unable to add device: Device /dev/sdb not found (or ignored by filtering).
-```
-
-修改：vim /etc/lvm/lvm.conf
-
-在global_filter添加"a|/dev/sdb|"
-
-```shell
-# a:表示允许，r：表示拒绝
-global_filter = [ "a|^/dev/sda2$|", "a|^/dev/vda2$|",  "a|^/dev/xvda2$|","a|/dev/sdb|","r|.*/|" ]
-```
+> 1. 如果出现如下错误：
+>
+>    ```
+>    Adding device /dev/sdb ... Unable to add device: Device /dev/sdb not found (or ignored by filtering).
+>    ```
+>
+>    修改：vim /etc/lvm/lvm.conf
+>
+>    在global_filter添加"a|/dev/sdb|"
+>
+>    ```shell
+>    # a:表示允许，r：表示拒绝
+>    global_filter = [ "a|^/dev/sda2$|", "a|^/dev/vda2$|",  "a|^/dev/xvda2$|","a|/dev/sdb|","r|.*/|" ]
+>    ```
+>
+>    
+>
+> 2. 如果出现如下错误
+>
+>    ```
+>    Adding device /dev/sdb ... Unable to add device: Can't initialize physical volume "/dev/sdb" of volume group "vg_1aac11877365750a9f905a0cd1b43335" without -ff
+>      /dev/sdb: physical volume not initialized.
+>    ```
+>
+>    无法初始化物理量，之前创建的cinder-volumes没有卸载
+>
+>    执行如下命令解决
+>
+>    ```shell
+>    pvcreate -ff -y /dev/sdb
+>    ```
 
 
 
